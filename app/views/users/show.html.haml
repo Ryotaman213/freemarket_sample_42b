@@ -3,17 +3,25 @@
   %ul
     %li{itemscope: "", itemtype: ""}
       = link_to "/" do
-        %span{itemprop: "title"} メルカリ
-      = fa_icon("angle-right")
+        %span{itemprop: "title"}
+          - breadcrumb :users_show
     %li{itemscope: "", itemtype: ""}
-      %span{itemprop: "title"} マイページ
+      %span{itemprop: "title"}
+        = breadcrumbs
 %main.l-container.clearfix
   .l-content
     %section.mypage-user-icon
       = link_to "" do
-        %figure
-          = image_tag asset_path"banner/dum05.gif",class: "image-mypage"
-        %h2.mybold テスト
+        .mypage_avater
+          - if current_user.avater.nil?
+            = image_tag asset_path"avater.png",class: "avater_signin"
+          - else
+            = current_user.avater
+        %h2.mybold
+          -if user_signed_in?
+            = current_user.nickname
+          -else
+            = テストです
         .mypage-number
           .mynum 評価
           %span.mybold 0

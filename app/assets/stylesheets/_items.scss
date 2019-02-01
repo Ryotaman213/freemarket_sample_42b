@@ -14,6 +14,13 @@
   }
 }
 
+.header_mecari_img_hi{
+  height: 49px;
+  width:180px;
+  margin: 0;
+  background-image: image-url("logo.svg");
+  color: rgb(245, 245, 245);
+}
 .sell-container-inner {
   background-color: white;
   border-style: solid;
@@ -29,13 +36,13 @@ h2.sell-container-header {
 
 form.sell-form {
   border-top: 1px solid #eee;
-  height: 1919px;
+  height: auto;
   background-color: white;
 }
 
 .sell-upload-box {
+  width: 620px;
   padding: 40px;
-  border-bottom: 1px solid #eee;
 }
 
 .sell-form-groups {
@@ -65,19 +72,59 @@ p.upload-image {
   font-size: 12px;
 }
 
-label.sell-image-dropbox {
+.sell-image-dropbox-contentair {
   display: block;
   width: 620px;
+  margin: 16px auto 0;
   height: 162px;
-<<<<<<< Updated upstream
+
   background: #f5f5f5;
   border: 1px dashed #ccc;
   line-height: 162px;
-=======
+
   .sell-uploader-items-container{
     display: block;
     margin: 0;
     margin-right: 10px;
+
+    .sell-upload-items{
+      margin: 0;
+      padding:0;
+      ul{
+        width: auto;
+        margin: 0;
+        padding:0;
+        list-style: none;
+        li{
+          width:116px;
+          height: 116px;
+          padding: 0;
+          margin: 0 0 10px 10px;
+          float: left;
+          border:solid 1px #ccc;
+          background-color: #f5f5f5;
+          figure{
+            position: relative;
+            line-height:116px;
+            height: 116px;
+            padding: 0;
+            margin: 0;
+          }
+            img{
+              width:116px;
+              height: 116px;
+            }
+          .sell-upload-item-button{
+
+            text-align: center;
+            a{
+              color:#0099e8;
+              text-decoration: none;
+              margin: 0 5px 0 5px;
+            }
+          }
+        }
+      }
     }
   }
   .sell-uploader-drop-box{
@@ -106,20 +153,25 @@ label.sell-image-dropbox {
       transform: translate(-50%, -50%);
       font-size: 14px;
     }
->>>>>>> Stashed changes
+
+  }
 }
 
 
 pre.visible-pc {
-    text-align: center;
-    font-size: 14px;
-    line-height: 100%;
-    padding-top: 120px;
-    -webkit-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    pointer-events: none;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  right: 16px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  transform: translate(0, -50%);
+  pointer-events: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+
 }
 
 .sell-items-content.clearfix {
@@ -159,9 +211,23 @@ input.sell-item-name {
     border: 0.5px solid $outline;
   }
 }
+.img_view{
+  height: 160px;
+  width:116px;
+  margin: 0 0 10px 10px;
+  img{
+    width: 116px;
+    margin: 0 0 10px 10px;
+  }
+  p{
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    width: 116px;
+  }
+}
 
-
-textarea.sell-item-info {
+.sell-item-info {
   display: block;
   width: 97%;
   max-width: 100%;
@@ -191,33 +257,45 @@ h3.sell-detail-text {
   float: right;
   width: 400px;
   margin: 0;
+  #clothes{
+    display: none;
+  }
+  #shoes{
+    display: none;
+  }
 }
 
 .select-wrap-category {
   margin: 8px 0 0;
   position: relative;
-}
-
-select.select-category {
-  -webkit-appearance: none;
-  z-index: 2;
-  height: 48px;
-  padding: 0 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: 0;
-  font-size: 16px;
-  line-height: 1.5;
-  cursor: pointer;
-  width:100%;
+  select{
+    -webkit-appearance: none;
+    z-index: 2;
+    height: 48px;
+    padding: 0 0 0 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    width:100%;
     &:focus {
-    outline: 0;
-    border: 0.5px solid $outline;
+      outline: 0;
+      border: 0.5px solid $outline;
     }
+  }
+  .child{
+    display: none;
+  }
+  .grandson{
+    display: none;
+  }
 }
 
-i.fas.fa-angle-down:before {
-  position: absolute;
+.select-wrap-category{
+  .fa{
+    position: absolute;
     right: 16px;
     top: 40%;
     z-index: 2;
@@ -226,6 +304,7 @@ i.fas.fa-angle-down:before {
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
     font-weight: solid;
+  }
 }
 
 span.form-any {
@@ -349,7 +428,7 @@ a.sell-coution-message {
   color: $outline;
 }
 
-button.send-sell-btn {
+.items-send-btn{
   margin: 40px 0 0;
   width: 100%;
   height: 50px;
@@ -357,6 +436,7 @@ button.send-sell-btn {
   border: 1px solid #ea352d;
   font-size: 14px;
   color: white;
+  cursor: pointer;
 }
 button.back-sell-btn {
   width: 300px;
@@ -369,8 +449,7 @@ button.back-sell-btn {
   top: 230px;
   left: 200px;
 }
-<<<<<<< Updated upstream
-=======
+
 
 #self{
   background-color: #c8c8c8;
@@ -451,6 +530,7 @@ i.fa.fa-bell {
   font-weight: 300;
 }
 
+
 .sell-upload-items{
   margin: 0;
   padding:0;
@@ -489,4 +569,3 @@ ul{
     }
   }
 }
->>>>>>> Stashed changes
